@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>XmlRpcCS</id>
-    <version>1.10.0</version>
+    <version>$version$</version>
     <authors>Nicholas Christopher</authors>
     <owners>Cinder Biscuits</owners>
     <projectUrl>http://xmlrpccs.sourceforge.net/</projectUrl>

@@ -15,12 +15,12 @@ namespace Nwc.XmlRpc
     public class XmlRpcServer : IEnumerable
     {
         private const int RESPONDER_COUNT = 10;
-        private IPAddress _address;
         private readonly IDictionary _handlers;
-        private TcpListener _myListener;
         private readonly int _port;
-        private XmlRpcSystemObject _system;
         private readonly WaitCallback _wc;
+        private IPAddress _address;
+        private TcpListener _myListener;
+        private XmlRpcSystemObject _system;
 
         /// <summary>Constructor with port and address.</summary>
         /// <remarks>
