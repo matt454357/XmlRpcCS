@@ -88,8 +88,9 @@ namespace Nwc.XmlRpc
 
         /// <summary>Send the request to the server.</summary>
         /// <param name="url"><c>String</c> The url of the XML-RPC server.</param>
+        /// <param name="timeout">AMount of time in milliseconds to wait for timeout</param>
         /// <returns><c>XmlRpcResponse</c> The response generated.</returns>
-        public XmlRpcResponse Send(string url)
+        public XmlRpcResponse Send(string url, int timeout = 0)
         {
             var request = (HttpWebRequest) WebRequest.Create(url);
             if (request == null)
@@ -98,6 +99,8 @@ namespace Nwc.XmlRpc
             request.Method = "POST";
             request.ContentType = "text/xml";
             request.AllowWriteStreamBuffering = true;
+            if (timeout > 0)
+                request.Timeout = timeout;
 
             var stream = request.GetRequestStream();
             var xml = new XmlTextWriter(stream, _encoding);
