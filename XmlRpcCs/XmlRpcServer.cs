@@ -54,7 +54,7 @@ public class XmlRpcServer : IEnumerable
 	    //	    IPAddress addr = IPAddress.Parse("127.0.0.1");
 	    lock (this)
 	      {
-		_myListener = new TcpListener(_port);
+		_myListener = new TcpListener(IPAddress.Any, _port);
 		_myListener.Start();
 		//start the thread which calls the method 'StartListen'
 		Thread th = new Thread(new ThreadStart(StartListen));
