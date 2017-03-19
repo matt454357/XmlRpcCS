@@ -1,0 +1,43 @@
+version: 2.0.0.{build}
+
+image: Visual Studio 2015
+
+platform: Any CPU
+
+configuration: Release
+
+pull_requests:
+  do_not_increment_build_number: true
+
+nuget:
+  disable_publish_on_pr: true
+
+build:
+  project: XmlRpcCs.sln
+  parallel: true
+  verbosity: minimal
+  publish_nuget: true
+  publish_nuget_symbols: false
+
+cache:
+  - packages -> **\packages.config
+  - '%LocalAppData%\NuGet\Cache'
+
+assembly_info:
+  patch: true
+  file: AssemblyInfo.*
+  assembly_version: '2.0.0.{build}'
+  assembly_file_version: '{version}'
+  assembly_informational_version: '{version}'
+
+before_build:
+  - del "C:\Program Files (x86)\MSBuild\4.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets"
+
+deploy:
+  - provider: NuGet
+    name: nuget_release
+    api_key:
+      secure: MJz3DvmtiuNK6IVsPbxR3gWiSCnhKqm6tmPsjdRDgwGx9L2PQSSZ1eE7YS8dkZhx
+    skip_symbols: true
+    on:
+      appveyor_repo_tag: true
