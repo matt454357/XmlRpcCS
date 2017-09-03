@@ -1,6 +1,6 @@
-version: 2.0.1.{build}
+version: 2.0.2.{build}
 
-image: Visual Studio 2015
+image: Visual Studio 2017
 
 platform: Any CPU
 
@@ -26,12 +26,9 @@ cache:
 assembly_info:
   patch: true
   file: AssemblyInfo.*
-  assembly_version: '2.0.1.{build}'
+  assembly_version: '2.0.2.{build}'
   assembly_file_version: '{version}'
   assembly_informational_version: '{version}'
-
-before_build:
-  - del "C:\Program Files (x86)\MSBuild\4.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets"
 
 deploy:
   - provider: NuGet
