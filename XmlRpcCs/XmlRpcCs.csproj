@@ -19,6 +19,7 @@
     <RepositoryUrl>https://github.com/cinderblocks/XmlRpcCS</RepositoryUrl>
     <PackageLicenseUrl>https://github.com/cinderblocks/XmlRpcCS/blob/master/LICENSE</PackageLicenseUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageProjectUrl>https://github.com/cinderblocks/XmlRpcCS</PackageProjectUrl>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
