@@ -71,10 +71,12 @@ namespace Nwc.XmlRpc
                             _text = null;
                             break;
                         case STRUCT:
+                            if (reader.IsEmptyElement) break;
                             PushContext();
                             _container = new Hashtable();
                             break;
                         case ARRAY:
+                            if (reader.IsEmptyElement) break;
                             PushContext();
                             _container = new ArrayList();
                             break;
