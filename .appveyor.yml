@@ -23,13 +23,6 @@ cache:
   - packages -> **\packages.config
   - '%LocalAppData%\NuGet\Cache'
 
-assembly_info:
-  patch: true
-  file: AssemblyInfo.*
-  assembly_version: '2.1.1.{build}'
-  assembly_file_version: '{version}'
-  assembly_informational_version: '{version}'
-
 before_build:
   - nuget restore XmlRpcCs.sln
 
