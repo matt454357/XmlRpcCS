@@ -12,6 +12,15 @@ pull_requests:
 nuget:
   disable_publish_on_pr: true
 
+dotnet_csproj:
+  patch: true
+  file: '**\*.csproj'
+  version: '{version}'
+  package_version: '{version}'
+  assembly_version: '{version}'
+  file_version: '{version}'
+  informational_version: '{version}'
+
 build:
   project: XmlRpcCs.sln
   parallel: true
