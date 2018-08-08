@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.IO;
 using System.Net;
@@ -49,7 +50,7 @@ namespace Nwc.XmlRpc
         {
             get
             {
-                var index = MethodName.IndexOf(".");
+                var index = MethodName.IndexOf(".", StringComparison.Ordinal);
 
                 if (index == -1)
                     return MethodName;
@@ -63,7 +64,7 @@ namespace Nwc.XmlRpc
         {
             get
             {
-                var index = MethodName.IndexOf(".");
+                var index = MethodName.IndexOf(".", StringComparison.Ordinal);
 
                 if (index == -1)
                     return MethodName;

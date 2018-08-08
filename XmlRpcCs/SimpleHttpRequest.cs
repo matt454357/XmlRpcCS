@@ -73,7 +73,7 @@ namespace Nwc.XmlRpc
                 if (_filePathFile != null)
                     return _filePathFile;
 
-                var i = FilePath.LastIndexOf("/");
+                var i = FilePath.LastIndexOf("/", StringComparison.Ordinal);
 
                 if (i == -1)
                     return "";
@@ -92,7 +92,7 @@ namespace Nwc.XmlRpc
                 if (_filePathDir != null)
                     return _filePathDir;
 
-                var i = FilePath.LastIndexOf("/");
+                var i = FilePath.LastIndexOf("/", StringComparison.Ordinal);
 
                 if (i == -1)
                     return "";
@@ -109,9 +109,9 @@ namespace Nwc.XmlRpc
             if (req == null)
                 throw new ApplicationException("Void request.");
 
-            if (0 == string.Compare("GET ", req.Substring(0, 4), true))
+            if (0 == String.Compare("GET ", req.Substring(0, 4), StringComparison.Ordinal))
                 HttpMethod = "GET";
-            else if (0 == string.Compare("POST ", req.Substring(0, 5), true))
+            else if (0 == String.Compare("POST ", req.Substring(0, 5), StringComparison.Ordinal))
                 HttpMethod = "POST";
             else
                 throw new InvalidOperationException("Unrecognized method in query: " + req);
