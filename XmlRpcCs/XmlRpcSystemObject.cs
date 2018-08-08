@@ -154,7 +154,7 @@ namespace Nwc.XmlRpc
 
             var mi = obj.GetType().GetMember(name.Substring(index + 1));
 
-            if (mi == null || mi.Length != 1) // for now we want a single signature
+            if (mi.Length != 1) // for now we want a single signature
                 return signatures;
 
             MethodInfo method;
@@ -205,7 +205,6 @@ namespace Nwc.XmlRpc
             {
                 /* ignored */
             }
-            ;
 
             if (help == null)
                 help = "No help available for: " + name;
