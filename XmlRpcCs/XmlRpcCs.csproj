@@ -14,7 +14,7 @@
     <Company>Cinderblocks Design</Company>
     <Version>2.1.1.2</Version>
     <Description>A small extremely simple to use XmlRcp library</Description>
-    <Copyright>Copyright 2003 Nicholas Christopher, Copyright 2016-2017 Cinderblocks Design. All Rights Reserved.</Copyright>
+    <Copyright>Copyright 2003 Nicholas Christopher, Copyright 2016-2018 Cinderblocks Design. All Rights Reserved.</Copyright>
     <PackageTags>xmlrpc,networking</PackageTags>
     <RepositoryUrl>https://github.com/cinderblocks/XmlRpcCS</RepositoryUrl>
     <PackageLicenseUrl>https://github.com/cinderblocks/XmlRpcCS/blob/master/LICENSE</PackageLicenseUrl>

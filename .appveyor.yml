@@ -2,8 +2,6 @@ version: 2.1.1.{build}
 
 image: Visual Studio 2017
 
-platform: Any CPU
-
 configuration: Release
 
 pull_requests:
